@@ -13,6 +13,8 @@
 
 //@property (strong,nonatomic) NSArray* imageNames;
 
+@property (strong, nonatomic) NSArray* preLoadedImages;
+
 +(ImageModel*) sharedInstance;
 -(UIImage*)getImageWithName:(NSString*)name;
 

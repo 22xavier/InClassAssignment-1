@@ -17,6 +17,7 @@
 @implementation ImageModel
 
 @synthesize imageNames = _imageNames;
+@synthesize preLoadedImages = _preLoadedImages;
 
 
 -(NSArray*)imageNames{
@@ -43,6 +44,16 @@
     UIImage* image = nil;
     image = [UIImage imageNamed:name];
     return image;
+}
+
+-(NSArray*)preLoadedImaged{
+    if (!_preLoadedImages){
+        UIImage* image1 = [self getImageWithName:@"Eric1"];
+        UIImage* image2 = [self getImageWithName:@"Eric2"];
+        UIImage* image3 = [self getImageWithName:@"Eric3"];
+        _preLoadedImages = @[image1, image2, image3];
+    }
+    return _preLoadedImages;
 }
 
 @end
